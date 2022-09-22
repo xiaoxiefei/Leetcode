@@ -42,7 +42,7 @@ int movesToChessboard();	//最终返回值
 int main() {
 
 	print_board();
-	printf("%d\n", is_Can());
+	printf("%d", movesToChessboard());
 
 }
 
@@ -50,7 +50,7 @@ int movesToChessboard() {
 	if (!is_Can)return -1;
 	if (N % 2 == 0)return odd_board();
 	else if (N % 2 != 0) {
-		even_board();
+		return even_board();
 	}
 }
 
