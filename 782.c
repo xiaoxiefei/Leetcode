@@ -13,7 +13,7 @@
 “棋盘” 是指任意一格的上下左右四个方向的值均与本身不同的矩阵
 
 */
-#include <stdio.h>
+#include "main.h"
 
 #define bool int
 #define true (int)1
@@ -39,7 +39,7 @@ int movesToChessboard();	//最终返回值
 
 
 
-int main() {
+void code_782() {
 
 	print_board();
 	printf("%d", movesToChessboard());
