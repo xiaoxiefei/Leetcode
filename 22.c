@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+//»ØËİ
 void create_str(char ** str, char *temp, int n, int *returnSize, int left, int right) {
     static int k = 0;
 
