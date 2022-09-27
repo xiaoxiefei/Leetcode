@@ -15,43 +15,51 @@
 除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符。
 */
 
-#define MAX 2147483646
-#define MIN (-2147483648)
+#define INT_MAX 2147483646
+#define INT_MIN (-2147483648)
 int myAtoi(char* s) {
-	long long result = 0;
-	int character = 1;
-	int index = 0;
-	int len = strlen(s);
-	for (int i = 0; i < len; i++) {
-		if (s[i] == '-') {
-			character = 0;
-			continue;
-		}
-		if (s[i] == '+') {
-			character = 1;
-			continue;
-		}
-		if (s[i] >= '0' && s[i] <= '9') {
+    int i = 0;
+    int out = 0;
+    int pol = 1;
+    int len = strlen(s);
 
-			if (s[i] == '0' && index == 0)continue;
-			if (character) {
-				result = ((long long)s[i] - 48) + result * 10;
-				if (result >= MAX && result > 0)return MAX;
-			}
-			else {
-				result = -((long long)s[i] - 48) + result * 10;
-				printf("result=%lld\n", result);
-				if (result <= MIN && result > 0)return MIN;
-			}
-			index++;
-		}
-		else {
-			if (s[i] != ' ')break;
-		}
-	}
+    if (len == 0) return 0;
 
-	if (!character)return result;
-	return result;
+    while (s[i] == ' ') i++;  //删除空格
+    if (s[i] == '-') {         //判断正负
+        pol = -1;
+        i++;
+    }
+    else if (s[i] == '+') {
+        pol = 1;
+        i++;
+    }
+    else {
+        pol = 1;
+    }
+
+    while (s[i] != '\0') {
+        if (s[i] < '0' || s[i]>'9') { //非法字符检查
+            i++;
+            break;
+        }
+        if (out > INT_MAX / 10) return (pol > 0 ? INT_MAX : INT_MIN);  //越界判断
+        if (out == INT_MAX / 10) {
+            if (pol > 0 && s[i] > '7') return INT_MAX;
+            else if (pol < 0 && s[i] >= '8') return INT_MIN;
+        }
+        //下面正常来写应该是out=10*out+(s[i]-'0')，之所以先减去'0',
+        //是为了防止10*out+s[i]越界
+        out = 10 * out - '0' + s[i];
+        //由于本题没有不允许64位的存储数据，所以非法判断可以更加简单
+        //可以直接将out定义为long型，直接判断即可
+        //if(pol*out>INT_MAX) return INT_MAX;
+        //if(pol*out<INT_MIN) return INT_MIN;
+        i++;
+    }
+    out = out * pol;
+
+    return out;
 }
 
 void code_8(){
