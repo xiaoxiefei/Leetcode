@@ -24,7 +24,7 @@ void swap(int* nums, int a, int b) {
 	nums[b] = temp;
 }
 
-void fun(int* nums, int numsSize, int** result, int *returnSize, int i) {
+void fun(int* nums, int numsSize, int** result, int* returnSize, int i) {
 
 	if (i == numsSize) {
 		for (int j = 0; j < i; j++) {
@@ -46,14 +46,16 @@ void fun(int* nums, int numsSize, int** result, int *returnSize, int i) {
 
 int** permute(int* nums, int numsSize, int* returnSize, int** returnColumnSizes) {
 	*returnSize = factorial(numsSize);
-	int ** result = (int**)malloc(sizeof(int*) * (*returnSize));
+	int** result = (int**)malloc(sizeof(int*) * (*returnSize));
 	if (!result) {
 		return;
 	}
 	for (int i = 0; i < *returnSize; i++) {
 		returnColumnSizes[i] = numsSize;
-		result[i] = (int*)malloc(sizeof(int) * numsSize);
-		memset(result[i], 0, sizeof(int) * numsSize);
+		*(result +i) = (int*)malloc(sizeof(int) * numsSize);
+		if (*(result + i)) {
+			memset(*(result + i), 0, sizeof(int) * numsSize);
+		}
 	}
 
 	*returnSize = 0;
@@ -68,7 +70,7 @@ void code_46() {
 	int** returnColumnSizes;
 	int returnSize = factorial(NUMSSIZE);
 	returnColumnSizes = (int**)malloc(sizeof(int*) * (returnSize));
-	returnColumnSizes =  permute(nums, NUMSSIZE, &returnSize, returnColumnSizes);
+	returnColumnSizes = permute(nums, NUMSSIZE, &returnSize, returnColumnSizes);
 	for (int i = 0; i < returnSize; i++) {
 		for (int j = 0; j < NUMSSIZE; j++) {
 			printf("%d ", returnColumnSizes[i][j]);

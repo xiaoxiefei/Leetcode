@@ -37,11 +37,11 @@ char** generateParenthesis(int n, int* returnSize) {
     char** str = (char**)malloc(sizeof(char*) * (int)pow(2, 2 * (int)n));
     if (str) {
         for (int i = 0; i < pow(2, n * 2); i++) {
-            str[i] = (char*)malloc(sizeof(char) * (2 * n));
-            if (!str[i]) {
+            *(str + i) = (char*)malloc(sizeof(char) * (2 * n));
+            if (!(*(str + i))) {
                 break;
             }
-            memset(str[i], 0, sizeof(char) * (2 * n));
+            memset(*(str + i), 0, sizeof(char) * (2 * n));
         }
     }
 
