@@ -15,6 +15,7 @@
 除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符。
 */
 
+#include "main.h"
 #define INT_MAX 2147483646
 #define INT_MIN (-2147483648)
 int myAtoi(char* s) {
