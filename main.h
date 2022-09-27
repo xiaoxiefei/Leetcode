@@ -6,8 +6,11 @@
 #include <string.h>
 #include <math.h>
 
-//void code_22();
+void code_8();
+
+void code_22();
 
 void code_46();
+
 
 #endif // !_MAIN_H_

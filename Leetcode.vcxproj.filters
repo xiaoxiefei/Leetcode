@@ -24,6 +24,9 @@
     <ClCompile Include="46.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="8.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
