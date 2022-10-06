@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-void code_782();
+//void code_782();
+
+void code_927();
 
 #endif // !_MAIN_H
