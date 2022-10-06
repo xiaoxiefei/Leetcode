@@ -18,5 +18,14 @@
     <ClCompile Include="782.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="927.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
