@@ -15,7 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="782.c">
+    <ClCompile Include="22.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="46.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="8.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="12.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="17.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="18.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="921.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="811.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
@@ -27,5 +51,10 @@
     <ClCompile Include="927.c">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

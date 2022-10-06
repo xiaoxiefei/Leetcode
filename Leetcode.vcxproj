@@ -101,7 +101,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -127,10 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClCompile Include="782.c" />
     <ClCompile Include="927.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="main.h" />
+=======
+    <ClCompile Include="12.c" />
+    <ClCompile Include="17.c" />
+    <ClCompile Include="18.c" />
+    <ClCompile Include="22.c" />
+    <ClCompile Include="46.c" />
+    <ClCompile Include="8.c" />
+    <ClCompile Include="811.c" />
+    <ClCompile Include="921.c" />
+    <ClCompile Include="main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h" />
+>>>>>>> normal
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
