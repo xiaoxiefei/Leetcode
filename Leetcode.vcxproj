@@ -134,6 +134,7 @@
     <ClCompile Include="46.c" />
     <ClCompile Include="8.c" />
     <ClCompile Include="811.c" />
+    <ClCompile Include="870.c" />
     <ClCompile Include="921.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>

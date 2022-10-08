@@ -18,7 +18,7 @@ int factorial(int n) {
 	return ret;
 }
 
-void swap(int* nums, int a, int b) {
+void swap_46(int* nums, int a, int b) {
 	int temp = nums[a];
 	nums[a] = nums[b];
 	nums[b] = temp;
@@ -38,9 +38,9 @@ void fun(int* nums, int numsSize, int** result, int* returnSize, int i) {
 	}
 	int k;
 	for (k = i; k < numsSize; k++) {
-		swap(nums, i, k);
+		swap_46(nums, i, k);
 		fun(nums, numsSize, result, returnSize, i + 1);
-		swap(nums, i, k);
+		swap_46(nums, i, k);
 	}
 }
 
