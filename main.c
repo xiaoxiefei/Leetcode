@@ -8,6 +8,7 @@ int main() {
 	// code_22();
 	// code_46();
 	// code_811();
-	code_870();
+	code_856();
+	// code_870();
 	// code_921();
 }

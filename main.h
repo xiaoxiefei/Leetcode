@@ -20,6 +20,8 @@ void code_46();
 
 void code_811();
 
+void code_856();
+
 void code_870();
 
 void code_921();
