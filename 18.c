@@ -21,7 +21,7 @@ nums[a] + nums[b] + nums[c] + nums[d] == target
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 
-void sort_18(int *nums, int numsSize) {
+void sort_18(int* nums, int numsSize) {
 	for (int i = 0; i < numsSize - 1; i++) {
 		for (int j = i + 1; j < numsSize; j++) {
 			if (nums[i] > nums[j]) {
@@ -33,23 +33,35 @@ void sort_18(int *nums, int numsSize) {
 	}
 }
 
+int is_in(int** nums, int numsSize, int* temp) {
+	for (int i = 0; i < numsSize; i++) {
+		int num = 0;
+		for (int j = 0; j < 4; j++) {
+			if (nums[i][j] == temp[j])num++;
+		}
+		if (num == 4)return 0;
+		num = 0;
+	}
+	return 1;
+}
+
 int** fourSum(int* nums, int numsSize, int target, int* returnSize, int** returnColumnSizes) {
 
-	int** result = (int**)malloc(sizeof(int*) * 2000);
-	if (*result) {
-		for (int i = 0; i < 2000; i++) {
-			result[i] = (int*)malloc(sizeof(int) * 4);
-			memset(result[i], 0, 4);
-		}
-	}
+	*returnColumnSizes = (int*)malloc(sizeof(int) * 1001);
+	*returnSize = 0;
+	int** result = (int**)malloc(sizeof(int*) * 1001);
+
 
 	sort_18(nums, numsSize);
+
 	for (int i = 0; i < numsSize - 3; i++) {
 		for (int j = i + 1; j < numsSize - 2; j++) {
+
 			int left = j + 1;
 			int right = numsSize - 1;
+
 			while (left < right) {
-				int sum = nums[i] + nums[j] + nums[left] + nums[right];
+				long sum = (long)nums[i] + nums[j] + nums[left] + nums[right];
 				if (sum < target) {
 					left++;
 				}
@@ -57,43 +69,43 @@ int** fourSum(int* nums, int numsSize, int target, int* returnSize, int** return
 					right--;
 				}
 				else {
-					(returnColumnSizes)[*returnSize] = 4;
-					//printf("%d %d %d %d\n", nums[i], nums[j], nums[left], nums[right]);
-					(*result + (*returnSize))[0] = nums[i];
-					(*result + (*returnSize))[1] = nums[j];
-					(*result + (*returnSize))[2] = nums[left];
-					(*result + (*returnSize))[3] = nums[right];
-					for (int w = 0; w < 4; w++) {
-						printf("%d ", (*result + (*returnSize))[w]);
+					(*returnColumnSizes)[*returnSize] = 4;
+					int* temp = (int*)malloc(sizeof(int) * 4);
+					temp[0] = nums[i];
+					temp[1] = nums[j];
+					temp[2] = nums[left];
+					temp[3] = nums[right];
+					sort_18(temp, 4);
+					if (is_in(result, *returnSize, temp)) {
+						*(result + (*returnSize)) = temp;
+						(*returnSize)++;
 					}
-					printf("returnSize = %d  size = %d\n", *returnSize, returnColumnSizes[*returnSize]);
-					(*returnSize)++;
-					break;
+					left++;
+					continue;
 				}
 			}
 		}
 	}
-	printf("size = %d\n", *returnSize);
-	for (int i = 0; i < *returnSize; i++) {
-		printf("returnSize = %d  size = %d\n",i , returnColumnSizes[i]);
-	}
+
 	return result;
 }
 
-#define numsSize  6
+#define numsSize  5
 void code_18() {
-	int nums[numsSize] = { 1,0,-1,0,-2,2 };
-	int target = 0;
+	int nums[numsSize] = { 2,2,2,2,2 };
+	int target = 8;
 	int returnSize = 0;
-	int* returnColumnSize = (int *)malloc(sizeof(int) * 2000);
-	int **ret = fourSum(nums, numsSize, target, &returnSize, returnColumnSize);
+	int returnColumnSize[1001];
+
+	int **result = fourSum(nums, numsSize, target, &returnSize, &returnColumnSize);
 	for (int i = 0; i < returnSize; i++) {
-		printf("size = %d \n", returnColumnSize[i]);
-	}
-	for (int i = 0; i < returnSize; i++) {
-		for (int j = 0; j < returnColumnSize[i]; j++) {
-			printf("%d ", ret[i][j]);
+		for (int j = 0; j < 4; j++) {
+			printf("%d ", result[i][j]);
 		}
 		printf("\n");
 	}
 }
+
+/*
+* 勉强做对，思路垃圾，不写解题思路了，希望自己下次碰到可以好运
+*/
