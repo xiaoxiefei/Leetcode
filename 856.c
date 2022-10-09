@@ -47,3 +47,9 @@ void code_856() {
 	int result = scoreOfParentheses(s);
 	printf("result = %d\n", result);
 }
+
+/*
+* 解题思路
+* 拆解括号：
+* 例如 (()(())) ， 可以拆解成(()) + ((())) = 2 + 4 = 6
+*/
