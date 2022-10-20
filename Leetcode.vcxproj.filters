@@ -48,6 +48,9 @@
     <ClCompile Include="856.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="779.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

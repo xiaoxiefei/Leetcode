@@ -132,6 +132,7 @@
     <ClCompile Include="18.c" />
     <ClCompile Include="22.c" />
     <ClCompile Include="46.c" />
+    <ClCompile Include="779.c" />
     <ClCompile Include="8.c" />
     <ClCompile Include="811.c" />
     <ClCompile Include="856.c" />
