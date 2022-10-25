@@ -138,6 +138,7 @@
     <ClCompile Include="856.c" />
     <ClCompile Include="870.c" />
     <ClCompile Include="921.c" />
+    <ClCompile Include="934.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>

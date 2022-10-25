@@ -28,5 +28,7 @@ void code_870();
 
 void code_921();
 
+void code_934();
+
 
 #endif // !_MAIN_H_
